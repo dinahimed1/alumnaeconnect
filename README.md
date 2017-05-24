@@ -1,1 +1,0 @@
-# tywls-alumni-project

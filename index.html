@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  
+  <head>
+    <link type="text/css" rel="stylesheet" href="style.css" />
+
+    <script src="index.js"></script>
+    <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script> 
+
+    <script src="https://www.gstatic.com/firebasejs/3.7.3/firebase.js"></script>
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyAs0SS7F-sWLTxth5MystiV1g1KfUcy2fE",
+        authDomain: "yolo-bef1c.firebaseapp.com",
+        databaseURL: "https://yolo-bef1c.firebaseio.com",
+        storageBucket: "yolo-bef1c.appspot.com",
+        messagingSenderId: "314325121003"
+      };
+      firebase.initializeApp(config);
+      var firebaseDB = function(dbName) {
+        window.dataSource = firebase.database().ref(dbName);
+      }
+    
+      var firebaseGet = function (callback) {
+        window.dataSource.once('value').then(function(snapshot) {
+          callback(snapshot.val());
+        });    
+      }
+    
+      var firebaseSet = function (data) {
+        window.dataSource.set(data)
+      }
+    </script>
+  </head>
+  <body>
+    
+    <h1> <center>ALUMNAE CONNECT</center> </h1>
+    
+    <!--TYWLS logo-->
+    <div id="img">
+      <img src="https://images.noodle.com/profiles/schools/ktUUL/photos/logo_tywls.gif" alt="tywls eh logo" width="400" height="500">
+    </div> 
+    
+     <!--button for next page-->
+    <center>
+        <button id="welcome"><a href="page1.html"><span>WELCOME</span></button> 
+    </center>
+    
+    <!--- how to use firebase: https://www.raywenderlich.com/139322/firebase-tutorial-getting-started-2 ---->
+  
+  </body>
+
+</html>

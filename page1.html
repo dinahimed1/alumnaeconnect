@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link type="text/css" rel="stylesheet" href="page1.css" />
+        <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script> 
+        <script src="https://www.gstatic.com/firebasejs/3.7.3/firebase.js"></script>
+        <script>
+          // Initialize Firebase
+          var config = {
+            apiKey: "AIzaSyAs0SS7F-sWLTxth5MystiV1g1KfUcy2fE",
+            authDomain: "yolo-bef1c.firebaseapp.com",
+            databaseURL: "https://yolo-bef1c.firebaseio.com",
+            storageBucket: "yolo-bef1c.appspot.com",
+            messagingSenderId: "314325121003"
+          };
+          firebase.initializeApp(config);
+          var firebaseDB = function(dbName) {
+            window.dataSource = firebase.database().ref(dbName);
+          }
+        
+          var firebaseGet = function (callback) {
+            window.dataSource.once('value').then(function(snapshot) {
+              callback(snapshot.val());
+            });    
+          }
+        
+          var firebaseSet = function (data) {
+            window.dataSource.set(data)
+          }
+        </script>
+        <script type="text/javascript" src="page1.js"></script>
+        
+
+        
+    </head>
+    <body>
+       
+        
+        <form>
+          Full Name:<br>
+          <input type="text" value="" id="name">
+          <br>
+          Image Url:<br>
+          <input type="text" value="" id="url">
+          <br>
+          Bio:<br>
+          <input type="text" value="" id="bio">
+          <br>
+          Email/Contact Info:<br>
+          <input type="text" value="" id="contact">
+          <br> 
+          College:<br>
+          <input type="text" value="" id="school">
+          <br>
+          Major:<br>
+          <input type="text" value="" id="major">
+          <br>
+        
+          <br><br>
+          <input  value="Submit" id="btn">
+        </form>                     
+        
+    </body>
+</html>

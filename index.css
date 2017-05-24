@@ -1,0 +1,64 @@
+body {
+    background-color: grey;
+    opacity: 0.6;
+    
+}
+
+#img {
+    text-align: center;
+    display: block;
+    width: 100%;
+    height: auto;
+    
+}
+
+
+h1 {
+  font-family: Indie Flower;
+  font-style: oblique;
+	font-size: 60px;
+	color: white;
+  
+}
+
+#welcome {
+  display: inline-block;
+  border-radius: 4px;
+  background-color: #000000;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 28px;
+  padding: 20px;
+  width: 200px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+
+#welcome span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+  color: white;
+}
+
+#welcome span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+#welcome:hover span {
+  padding-right: 25px;
+  
+} 
+
+#welcome:hover span:after {
+  opacity: 1;
+  right: 0;
+}
